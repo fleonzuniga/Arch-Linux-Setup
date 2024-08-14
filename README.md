@@ -40,23 +40,23 @@ Type `w` on the fdisk prompt to write the changes and exit.
 
 Format the first partition with FAT32.
 ```
-mkfs.fat -F32 /dev/${DISK}1
+mkfs.fat -F32 /dev/sda1
 ```
 Format the second partition with swap.
 ```
-mkswap /dev/${DISK}2
+mkswap /dev/sda2
 ```
 Turn on the swap.
 ```
-swapon /dev/${DISK}2
+swapon /dev/sda2
 ```
 Format the root filesystem.
 ```
-mkfs.ext4 /dev/${DISK}3
+mkfs.ext4 /dev/sda3
 ```
 Mount filesystem.
 ```
-mount /dev/${DISK}3 /mnt
+mount /dev/sda3 /mnt
 ```
 Install all base packages.
 ```
