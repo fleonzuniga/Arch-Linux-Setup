@@ -1,5 +1,5 @@
 # Arch-Linux-Steup
-This is a setup for Arch Linux with pipewire, wayland, and KDE
+This is a setup for Arch Linux with linux-zen kernel pipewire, wayland, and KDE
 
 ## Partition the disks
 Identify the disk to be partitioned.
@@ -69,4 +69,8 @@ genfstab -U /mnt >> /mnt/etc/fstab
 Change root into the new system.
 ```
 arch-chroot /mnt
+```
+Install git to download this installation script
+```
+pacman -S git
 ```
