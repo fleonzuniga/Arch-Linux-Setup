@@ -18,8 +18,7 @@ Type `g` on the fdisk prompt to create a GPT partition table.
     3. *enter* (First sector with default 2048).
     4. `+512M` *enter* (Sector size. "This is the EFI partition").
     5. `t` *enter* (Set partition type).
-    6. *enter*
-    7. `1` *enter* (Partition type: EFI).
+    6. `1` *enter* (Partition type: EFI).
 
 * To create the second partition (**Swap partition**:) type on the fdisk prompt:
     1. `n` *enter* (New Partition).
