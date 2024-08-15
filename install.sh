@@ -1,3 +1,16 @@
+# Functions
+function install_nvidia() {
+    pacman -S nvidia \
+              nvidia-utils \
+              nvidia-settings \
+              opencl-nvidia \
+              xorg-server-devel --noconfirm
+    echo "options nvidia-drm modeset=1" >> /etc/modprobe.d/nvidia-drm-nomodeset.conf
+    mkinitcpio -P
+    nvidia-xconfig
+}
+
+# Installation process
 source install_variables.sh
 
 echo ""
@@ -10,7 +23,7 @@ echo "CPU:      ${CPU}"
 echo "GPU:      ${GPU}"
 echo ""
 
-read -e -p "Does it looks ok? " CHOICE
+read -e -p "Does it looks ok? [Yes|No]" CHOICE
 
 if [[ ! ${CHOICE} == [Yy]* ]]; then
     echo "To set other parameters change variables in variable.sh"
@@ -70,11 +83,11 @@ else
         ;;
         # Nvidia GPU
         nvidia)
-            pacman -S nvidia --noconfirm
+            install_nvidia
         ;;
         both)
             pacman -S mesa --noconfirm
-            pacman -S nvidia --noconfirm
+            install_nvidia
         ;;
         # Virtual environment
         virtual)
@@ -99,8 +112,5 @@ else
     pacman -S konsole dolphin kate okular --noconfirm
 
     umount -f /mnt
-    reboot
+    exit
 fi
-
-
-
