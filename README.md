@@ -69,7 +69,7 @@ Change root into the new system.
 ```
 arch-chroot /mnt
 ```
-Install git to download this installation script
+Install git to download the installation script
 ```
 pacman -S git
 ```
