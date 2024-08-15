@@ -1,5 +1,5 @@
 # Arch-Linux-Steup
-This is a setup for Arch Linux with linux-zen kernel pipewire, wayland, and KDE
+This is a setup for Arch Linux with linux-zen kernel pipewire, wayland, Nvidia, and KDE
 
 ## Partition the disks
 Identify the disk to be partitioned.
